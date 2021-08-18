@@ -2,8 +2,12 @@
     "name": "Composto Monitor.",
     "short_name": "Composto Monitor.",
     "description": "esp32 compost variable register monitor on demand ",
-    "lang": "es-MX",
     "orientation": "portrait-primary",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#76A1A0",
+    "background_color": "#FFFFFF",
+
     "icons": [
       {
         "src": "/../images/icons/Icon-120.png",
@@ -68,11 +72,8 @@
       {
         "src": "/../images/icons/icon-1024.png",
         "sizes": "1024x1024",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any maskable"
       }
-    ],
-    "start_url": "/",
-    "display": "minimal-iu",
-    "theme_color": "#76A1A0",
-    "background_color": "#FFFFFF"
+    ]
   }
