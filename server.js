@@ -5,13 +5,6 @@ const fs = require('fs')
 const httpPort = 8080
 const app = express()
 
-app.use((req, res, next) => {
-  if (!req.secure) {
-    return res.redirect('https://' + req.headers.host + req.url);
-  }
-  next();
-})
-
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
