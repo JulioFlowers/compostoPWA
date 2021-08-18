@@ -1,6 +1,5 @@
 const express  = require('express');
 const app      = express();
-const port     = process.env.PORT || 8080;
 const path     = require('path');
 
 const app = express()
@@ -13,5 +12,7 @@ app.get('/',(req, res)=> {
 })
 
 
-app.listen(port);
-console.log('Servidor iniciado en puerto ' + port);
+const server = app.listen(process.env.PORT || 8080, () => {
+  const port = server.address().port;
+  console.log(`Express is working on port ${port}`);
+});
