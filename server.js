@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path')
-const fs = require('fs')
 
-const httpPort = 8080
+const httpPort = 80
+
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
