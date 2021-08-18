@@ -1,0 +1,16 @@
+{
+    "name": "Composto PWA Client.",
+    "short_name": "Composto Monitor.",
+    "description": "",
+    "icons": [
+      {
+        "src": "/../images/splash-screen.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "display": "fullscreen",
+    "theme_color": "#65AB98",
+    "background_color": "#FFFFFF"
+  }
