@@ -1,17 +1,36 @@
-const express  = require('express');
-const app      = express();
-const path     = require('path');
+'use strict'
+const express = require('express')
+const path = require('path')
+const fs = require('fs')
+const https = require('https')
+const app = express()
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+const httpPort = process.env.PORT || 8080
+const httpsPort = process.env.PORT || 8443
+
+const key = fs.readFileSync('./certificates/composto.key');
+const cert = fs.readFileSync('./certificates/composto.crt');
 
 
+const server = https.createServer({key: key, cert: cert }, app);
 
-app.get('/',(req, res)=> {
+app.use((req, res, next) => {
+  if (!req.secure) {
+    return res.redirect('https://' + req.headers.host + req.url);
+  }
+  next();
+})
+
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
+app.listen(httpPort, () => {
+  console.log(`Express is working on port ${httpPort}`);
+});
 
-const server = app.listen(process.env.PORT || 8080, () => {
-  const port = server.address().port;
-  console.log(`Express is working on port ${port}`);
+server.listen(httpsPort, () => {
+  console.log(`Express is working on port ${httpsPort}`);
 });
