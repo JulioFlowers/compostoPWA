@@ -1,0 +1,16 @@
+{
+  "name": "compostopwa",
+  "version": "1.0.0",
+  "description": "Composto Client for esp32 and arduino compost lectures using node.js and MQTT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-debug": "nodemon --inspect index.js"
+  },
+  "author": "composto team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
