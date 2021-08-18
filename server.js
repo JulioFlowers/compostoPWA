@@ -1,15 +1,9 @@
 const express = require('express')
 const path = require('path')
 const fs = require('fs')
-const https = require('https')
 
-const httpPort = 80
-const httpsPort = 443
-const key = fs.readFileSync('./certificates/composto.key');
-const cert = fs.readFileSync('./certificates/composto.crt');
-
+const httpPort = 8080
 const app = express()
-const server = https.createServer({key: key, cert: cert }, app);
 
 app.use((req, res, next) => {
   if (!req.secure) {
@@ -26,8 +20,4 @@ app.get('/', function(req, res) {
 
 app.listen(httpPort, function () {
   console.log(`Listening on port ${httpPort}!`)
-})
-
-server.listen(httpsPort, function () {
-  console.log(`Listening on port ${httpsPort}!`)
 })
