@@ -5,9 +5,6 @@ const fs = require('fs')
 const https = require('https')
 const app = express()
 
-const httpPort = process.env.PORT || 8080
-const httpsPort = process.env.PORT || 8443
-
 const key = fs.readFileSync('./certificates/composto.key');
 const cert = fs.readFileSync('./certificates/composto.crt');
 
@@ -27,10 +24,12 @@ app.get('/',(req, res)=> {
   res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
-app.listen(httpPort, () => {
-  console.log(`Express is working on port ${httpPort}`);
+app.listen(process.env.PORT || 8080, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-server.listen(httpsPort, () => {
-  console.log(`Express is working on port ${httpsPort}`);
+server.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
+
+149 
