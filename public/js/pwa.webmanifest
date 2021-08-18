@@ -6,61 +6,55 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "/../images/icons/icon-120.png",
+        "src": "/../images/icons/Icon-120.png",
         "sizes": "120x120",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-128.png",
+        "src": "/../images/icons/Icon-128.png",
         "sizes": "128x128",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-120.png",
-        "sizes": "120x120",
-        "type": "image/png"
-      },
-
-      {
-        "src": "/../images/icons/icon-144.png",
+        "src": "/../images/icons/Icon-144.png",
         "sizes": "144x144",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-152.png",
+        "src": "/../images/icons/Icon-152.png",
         "sizes": "152x152",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-167.png",
+        "src": "/../images/icons/Icon-167.png",
         "sizes": "167x167",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-172.png",
+        "src": "/../images/icons/Icon-172.png",
         "sizes": "172x172",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-180.png",
+        "src": "/../images/icons/Icon-180.png",
         "sizes": "180x180",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-196.png",
+        "src": "/../images/icons/Icon-196.png",
         "sizes": "196x196",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/icon-256.png",
+        "src": "/../images/icons/Icon-256.png",
         "sizes": "256x256",
         "type": "image/png"
       },
