@@ -1,11 +1,7 @@
 const CACHE_NAME = 'composto-cache';
 const toCache = [
   '/',
-  '/views/index.ejs',
-  '/views/partials/footer.ejs',
-  '/views/partials/head.ejs',
-  '/views/partials/navbar.ejs',
-  '/views/css/bootstrap.min.css'
+  '/index.ejs',
 ];
 
 self.addEventListener('install', function(event) {
