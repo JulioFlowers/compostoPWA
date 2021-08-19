@@ -5,7 +5,7 @@ const toCache = [
   '/views/partials/footer.ejs',
   '/views/partials/head.ejs',
   '/views/partials/navbar.ejs',
-  '/views/css/bootstrap.min.js'
+  '/views/css/bootstrap.min.css'
 ];
 
 self.addEventListener('install', function(event) {
