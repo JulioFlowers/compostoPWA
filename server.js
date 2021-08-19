@@ -13,7 +13,7 @@ app.get('*',function(req,res,next){
 }) 
 
 app.get('/',(req, res)=> {
-     res.render('pages/index');
+     res.render('/index');
 })
 
 app.listen(process.env.PORT || 3000, function(){
