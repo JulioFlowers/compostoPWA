@@ -5,13 +5,12 @@ const app = express()
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
-/*
 app.get('*',function(req,res,next){
   if(req.headers['x-forwarded-proto']!='https')
   return res.redirect(['https://', req.get('Host'), req.url].join(''));
   else
-    next()  Continue to other routes if we're not redirecting 
-}) */
+    next()  //Continue to other routes if we're not redirecting 
+}) 
 
 app.get('/',(req, res)=> {
      res.render('pages/index');
