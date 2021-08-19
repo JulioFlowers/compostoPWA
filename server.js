@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'));
 
 app.get('*',function(req,res,next){
   if(req.headers['x-forwarded-proto']!='https')

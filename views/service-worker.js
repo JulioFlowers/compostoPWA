@@ -1,10 +1,10 @@
 const CACHE_NAME = 'composto-cache';
 const toCache = [
   '/',
-  '../../views/pages/index.ejs',
-  '../../views/partials/footer.ejs',
-  '../../views/partials/head.ejs',
-  '../../views/partials/navbar.ejs',
+  '/pages/index.ejs',
+  '/partials/footer.ejs',
+  '/partials/head.ejs',
+  '/partials/navbar.ejs',
   '/css/bootstrap.min.js',
   '/images',
   '/js/status.js',
