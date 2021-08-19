@@ -4,13 +4,14 @@
   "description": "Composto Client for esp32 and arduino compost lectures using node.js and MQTT",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon sever.js",
     "start": "node server.js",
     "server-debug": "nodemon --inspect sever.js"
   },
   "author": "composto team",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {
