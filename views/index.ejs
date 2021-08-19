@@ -5,21 +5,23 @@
     <title>Composto Main</title>
 </head>
 
-<body class="container-fluid">
+<body>
+<div class="container-fluid">
 
-<header>
-    <%- include('../views/partials/navbar.ejs'); %>
-</header>
+    <header>
+        <%- include('../views/partials/navbar.ejs'); %>
+    </header>
+    
+    <main>
+        <br>
+        <div class="jumbotron">
+            <h1>Esto es una prueba</h1>
+            <p>Bienvenido a Composto Monitor</p>
+        </div>
+    </main>
+    
+    <%- include('../views/partials/footer.ejs'); %>
 
-<main>
-    <br>
-    <div class="jumbotron">
-        <h1>Esto es una prueba</h1>
-        <p>Bienvenido a Composto Monitor</p>
-    </div>
-</main>
-
-<%- include('../views/partials/footer.ejs'); %>
-
+</div>
 </body>
 </html>
