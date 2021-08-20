@@ -73,6 +73,12 @@
         "src": "/../images/icons/icon-1024.png",
         "sizes": "1024x1024",
         "type": "image/png",
+      },
+      
+      {
+        "src": "/../images/icons/icon-2048.png",
+        "sizes": "2048x2048",
+        "type": "image/png",
         "purpose": "any maskable"
       }
     ]

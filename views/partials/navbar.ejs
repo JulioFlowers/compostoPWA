@@ -1,23 +1,17 @@
 
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5fb3b1">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Composto Monitor</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Acciones
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-              <li><a class="dropdown-item"  href="/live">Live data.</a></li>
-              <li><a class="dropdown-item"  href="/sensors">Sensores.</a></li>
-              <li><a class="dropdown-item" href="/downloads">Descargar Datos.</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5fb3b1;">
+    <a class="navbar-brand" href="/">Composto Monitor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/live"> Tiempo Real. </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sensors">por Sensor.</a>
+        </li>
+      </ul>
     </div>
   </nav>
