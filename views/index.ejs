@@ -1,27 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <%- include('../views/partials/head.ejs'); %>
-    <title>Composto Main</title>
+        <title>Composto Main</title>
 </head>
 
 <body>
 
     <%- include('../views/partials/navbar.ejs'); %>
+        <div class="container-fluid">
 
-    <div class="container-fluid">
+            <div class="col-md-12">
 
-        <main>
-            <br>
-            <div class="jumbotron">
-                <h1>Esto es una prueba</h1>
-                <p>Bienvenido a Composto Monitor</p>
+                <div class="h-100 p-5 bg-light border rounded-5">
+                    <h4 class="text-center">Ultimo registro.</h4>
+
+                    <% var m = data.length - 1 %>
+                    <p class="text-center"> Se muestra el ultimo registro medido. Hora de corte: <strong><%=data[m][13]%> (HH:MM:SS)</strong>
+                    </p>
+                    <br>
+
+                    <div class="row justify-content-md-center">
+
+                        <div class="col-md-6">
+
+                            <% for (var i=0; i < 6; i++ ) { %>
+                                <% var m = data.length - 1 %>
+                                <p> <span class="font-weight-light">Composta: </span> <%= i+1%> </p>
+                                <ul>
+                                    <li>
+                                        <span class="font-weight-light">Hora de medición:</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][1] %> ± 0.5s (HH:MM:SS)</span> 
+                                    </li>
+    
+                                    <li>
+                                        <span class="font-weight-light">Humedad promedio (fase solida):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][2] %>, σ : <%= data[m][i][3] %> &nbsp;&nbsp;% </span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Humedad promedio (fase gaseosa):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][4] %>,   σ : <%= data[m][i][5] %> &nbsp;&nbsp;% </span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Temperatura promedio (fase solida):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][6] %>,   σ : <%= data[m][i][7] %> &nbsp;&nbsp;C°</span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Temperatura promedio (fase gaseosa):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][8] %>,   σ : <%= data[m][i][9] %> &nbsp;&nbsp;C°</span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Dioxido de Carbono circundante:</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;">   <%= data[m][i][10] %>,   σ : <%= data[m][i][11] %> &nbsp;&nbsp;ppm </span> 
+                                    </li>
+
+                                    
+                                
+                                </ul>
+                                <br>
+    
+                                <% } %>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <% for (var i=6; i < 12; i++ ) { %>
+                                <% var m = data.length - 1 %>
+                                <p> <span class="font-weight-light">Composta: </span> <%= i+1%> </p>
+                                <ul>
+                                    <li>
+                                        <span class="font-weight-light">Hora de medición:</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][1] %> ± 0.5s (HH:MM:SS)</span> 
+                                    </li>
+    
+                                    <li>
+                                        <span class="font-weight-light">Humedad promedio (fase solida):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][2] %>,   σ : <%= data[m][i][3] %> &nbsp;&nbsp;% </span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Humedad promedio (fase gaseosa):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][4] %>,   σ : <%= data[m][i][5] %> &nbsp;&nbsp;% </span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Temperatura promedio (fase solida):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][6] %>,   σ : <%= data[m][i][7] %> &nbsp;&nbsp;C°</span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Temperatura promedio (fase gaseosa):</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;"><%= data[m][i][8] %>,   σ : <%= data[m][i][9] %> &nbsp;&nbsp;C°</span> 
+                                    </li>
+
+                                    <li>
+                                        <span class="font-weight-light">Dioxido de Carbono circundante:</span> &nbsp;&nbsp;&nbsp; <span style="font-size: 1.3em;">   <%= data[m][i][10] %>,   σ : <%= data[m][i][11] %> &nbsp;&nbsp;ppm </span> 
+                                    </li>
+
+                                    
+                                
+                                </ul>
+                                <br>
+    
+                                <% } %>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-        </main>
-        
-        <%- include('../views/partials/footer.ejs'); %>
 
-    </div>
+            <%- include('../views/partials/footer.ejs'); %>
+
+        </div>
 
 </body>
+
 </html>
