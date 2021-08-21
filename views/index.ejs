@@ -2,24 +2,11 @@
 <html lang="es">
 
 <head>
-
     <%- include('../views/partials/head.ejs'); %>
-
-    <script language="javascript">
-        
-        function hidedownloads(d){
-            
-            if(d =='guest'){
-            let x = document.getElementById('descargas')
-            x.classList.add('invisible')
-        }
-        }
-        
-    </script>
         <title>Composto Main</title>
 </head>
 
-<body onload="hidedownloads(user)">
+<body>
     <%- include('../views/partials/navbar.ejs'); %>
         <div class="container-fluid">
             <br>

@@ -31,6 +31,5 @@ module.exports = (app, passport) => {
         res.render('index.ejs', { data, user });
     })
 
-    app.get( '/live')
 
 }

@@ -13,11 +13,11 @@ const limiter = rateLimit({
   max: 100 // limit each IP to 100 requests per windowMs
 });
 
+app.use('/static', express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
 
 app.use(helmet());
 app.use(limiter);
-server.use(express.static(__dirname + '/views'));
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser('elperroespacialescuchaañoñocantarflamenco'))
 
