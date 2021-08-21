@@ -57,12 +57,12 @@ passport.deserializeUser((id,done)=>{
 
 })
 
- /*app.get('*',function(req,res,next){
+ app.get('*',function(req,res,next){
   if(req.headers['x-forwarded-proto']!='https')
   return res.redirect(['https://', req.get('Host'), req.url].join(''));
   else
     next()  //Continue to other routes if we're not redirecting 
-})*/
+})
 
 require('./app.js')(app, passport)
 

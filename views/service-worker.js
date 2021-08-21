@@ -1,7 +1,7 @@
 const CACHE_NAME = 'composto-cache';
 const toCache = [
   '/',
-  '/views/login.ejs',
+  '/login.ejs',
   '/partials',
   '/js',
   '/images'
