@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 
 app.use(helmet());
 app.use(limiter);
-app.use(express.static(__dirname + '/views'))
+server.use(express.static(__dirname + '/views'));
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser('elperroespacialescuchaañoñocantarflamenco'))
 
