@@ -2,27 +2,41 @@
 
 module.exports = (mqtt) => {
 
-    var Opciones = {
-        host: "34.102.107.56",
-        port: 8083,
-        protocol: "mqtt",
-        clientId: "composto_monitor" + (Math.random() * 3.3)
-    };
+// connection option
+const options = {
+  		clean: true, // retain session
+      connectTimeout: 4000, // Timeout period
+      // Authentication information
+      clientId: 'compostomonitor' + String(Math.random()*2.5),
+      username: 'emqx_test',
+      password: 'emqx_test',
+}
 
-    var client = mqtt.connect(Opciones)
+// Connect string, and specify the connection method by the protocol
+// ws Unencrypted WebSocket connection
+// wss Encrypted WebSocket connection
+// mqtt Unencrypted TCP connection
+// mqtts Encrypted TCP connection
+// wxs WeChat applet connection
+// alis Alipay applet connection
+const connectUrl = 'ws://34.102.107.56:8883/mqtt'
+const client = mqtt.connect(connectUrl, options)
 
-    client.on('connect', function () {
-        client.subscribe('presence', function (err) {
-            if (!err) {
-                client.publish('presence', 'Hello mqtt')
-            }
-        })
-    })
+client.on('connect', (error) => {
+    console.log('Servidor conectado exitosamente.')
+})
 
-    client.on('message', function (topic, message) {
-        // message is Buffer
-        console.log(message.toString())
-        client.end()
-    })
+client.on('reconnect', (error) => {
+    console.log('reconnecting:', error)
+})
+
+client.on('error', (error) => {
+    console.log('Connection failed:', error)
+})
+
+client.on('message', (topic, message) => {
+  console.log('receive message：', topic, message.toString())
+})
+
 
 }
