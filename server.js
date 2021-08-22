@@ -1,5 +1,7 @@
 'use strict'
+
 const express = require('express')
+const mqtt = require('mqtt')
 
 const passport = require('passport')
 const cookieParser = require('cookie-parser')
@@ -24,6 +26,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(cookieParser('elperroespacialescuchaañoñocantarflamenco'))
 
 require('./server/passportconfig.js')(app, passport, session, passportLocal)
+require('./server/mqttcon.js')(mqtt)
 
  /*app.get('*',function(req,res,next){
   if(req.headers['x-forwarded-proto']!='https')
