@@ -7,9 +7,11 @@ const options = {
   		clean: true, // retain session
       connectTimeout: 4000, // Timeout period
       // Authentication information
-      clientId: 'compostomonitor' + String(Math.random()*2.5),
-      username: 'emqx_test',
-      password: 'emqx_test',
+      clientId: 'compostomonitor'+String(Math.random()*3.3),
+      keepalive: 60,
+      clean: true,
+      username: "compostoM",
+      password: "greenmethane"
 }
 
 // Connect string, and specify the connection method by the protocol
@@ -19,7 +21,7 @@ const options = {
 // mqtts Encrypted TCP connection
 // wxs WeChat applet connection
 // alis Alipay applet connection
-const connectUrl = 'ws://34.102.107.56:8883/mqtt'
+const connectUrl = 'wss://34.102.107.56:8084/mqtt'
 const client = mqtt.connect(connectUrl, options)
 
 client.on('connect', (error) => {
@@ -33,10 +35,5 @@ client.on('reconnect', (error) => {
 client.on('error', (error) => {
     console.log('Connection failed:', error)
 })
-
-client.on('message', (topic, message) => {
-  console.log('receive message：', topic, message.toString())
-})
-
 
 }
