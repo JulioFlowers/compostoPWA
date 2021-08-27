@@ -1,7 +1,7 @@
 const CACHE_NAME = 'composto-cache';
 const toCache = [
-  '/static/',
-  '/static/index.ejs'
+  '/',
+  'index.ejs'
 ];
 
 self.addEventListener('install', function(event) {
