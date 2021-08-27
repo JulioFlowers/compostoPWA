@@ -3,38 +3,38 @@
     "short_name": "Composto Monitor.",
     "description": "esp32 compost variable register monitor on demand ",
     "orientation": "portrait-primary",
-    "start_url": "/",
+    "start_url": "https://composto-monitor.herokuapp.com/login",
     "display": "standalone",
     "theme_color": "#5fb3b1",
     "background_color": "#FFFFFF",
 
     "icons": [
       {
-        "src": "/../images/icons/Icon-120.png",
+        "src": "static/images/icons/Icon-120.png",
         "sizes": "120x120",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/Icon-128.png",
+        "src": "static/images/icons/Icon-128.png",
         "sizes": "128x128",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/Icon-144.png",
+        "src": "static/images/icons/Icon-144.png",
         "sizes": "144x144",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/Icon-152.png",
+        "src": "static/images/icons/Icon-152.png",
         "sizes": "152x152",
         "type": "image/png"
       },
 
       {
-        "src": "/../images/icons/Icon-167.png",
+        "src": "static/images/icons/Icon-167.png",
         "sizes": "167x167",
         "type": "image/png"
       },
