@@ -9,64 +9,58 @@
 <body>
   <style type="text/css">
     body {
-      background: rgb(95, 179, 177);
-      background: radial-gradient(circle, rgba(95, 179, 177, 0.97) 21%, rgba(148, 187, 233, 0.95) 100%);
+      background-image: radial-gradient(circle at 50% 110.64%, #b4d2c5 0, #a3ccbf 12.5%, #90c4ba 25%, #7abcb5 37.5%, #5fb3b1 50%, #3eaaae 62.5%, #00a1ae 75%, #0099ae 87.5%, #0091b0 100%);
     }
-
-    footer {
-      clear: both;
-      position: relative;
-      height: 200px;
-      margin-top: -200px;
-    }
-    
   </style>
-  <div class="container-fluid">
+  <div id="wrap">
 
-    <br>
-    <br>
-    <br>
+    <div id="main" class="container clear-top">
+      <br>
+      <br>
+      <br>
 
-    <div class="row">
-      <div class="col-sm-6 mx-auto">
+      <div class="row">
+        <div class="col-sm-6 mx-auto">
 
-        <div class="card text-center">
-          <div class="card-header">
-            ¡Bienvenido a Composto Monitor!
-          </div>
-          <div class="card-body">
-            <form action="/login" method="POST">
-              <div class="row mb-3">
-                <label for="inputUser" class="col-sm-2 col-form-label">Usuario</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="username" placeholder="invitados usen username: guest "
-                    id="inputUser">
+          <div class="card text-center">
+            <div class="card-header">
+              ¡Bienvenido a Composto Monitor!
+            </div>
+            <div class="card-body">
+              <form action="/login" method="POST">
+                <div class="row mb-3">
+                  <label for="inputUser" class="col-sm-2 col-form-label">Usuario</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username"
+                      placeholder="invitados usen username: guest " id="inputUser">
+                  </div>
                 </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" name="password"
-                    placeholder="contraseña para invitados: composta " id="inputPassword3">
+                <div class="row mb-3">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password"
+                      placeholder="contraseña para invitados: composta " id="inputPassword3">
+                  </div>
                 </div>
-              </div>
 
-              <button type="submit" class="btn btn-secondary">Sign in</button>
-            </form>
+                <button type="submit" class="btn btn-secondary">Sign in</button>
+              </form>
+            </div>
+
           </div>
 
         </div>
 
       </div>
-
     </div>
-
   </div>
 
-  <footer>
+  <footer class="footer">
+
     <p class="text-center" style="color:rgb(255, 255, 255)">Recopilación de datos experimental para el CNF 2021</p>
+
   </footer>
-  </div>
+
 
 </body>
 

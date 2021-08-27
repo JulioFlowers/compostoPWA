@@ -12,9 +12,26 @@
 <meta name="description" content="Monitor para las lecturas de los sensores enviadas por el esp32 en tiempo real">
 
 <style>
-    body { min-height: 100vh; 
-        padding: 0%;
-    }
+    html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+  position: relative;
+  margin-top: -4%; /* negative value of footer height */
+  height: 4%;
+  clear:both;
+  padding-top:20px;
+} 
 
 </style>
     
