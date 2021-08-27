@@ -1,6 +1,6 @@
 const CACHE_NAME = 'composto-cache';
 const toCache = [
-  '/',
+  '/static/',
   '/static/index.ejs'
 ];
 

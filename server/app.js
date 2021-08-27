@@ -6,7 +6,7 @@ module.exports = (app, passport) => {
 
     app.get('/login', (req, res) => {
 
-        res.render('pages/login.ejs')
+        res.render('/static/pages/login.ejs')
     })
 
     app.post('/login', (req,res,next)=>{
@@ -28,7 +28,7 @@ module.exports = (app, passport) => {
     }, (req, res) => {
 
         let data = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [[1, '4:05', '44', '2', '70', '1', '45', '2', '25', '3', '345', '12'], [], [], [], [], [], [], [], [], [], [], [], [], '04:10:34']]
-        res.render('index.ejs', { data, user });
+        res.render('/static/index.ejs', { data, user });
     })
 
 
