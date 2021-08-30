@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express')
+const path = require('path')
 const mqtt = require('mqtt')
 
 const passport = require('passport')
@@ -12,7 +13,7 @@ var helmet = require('helmet');
 var rateLimit = require("express-rate-limit");
 
 const app = express()
-app.use('/static', express.static(__dirname + '/views'));
+app.use(express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');
 
 const limiter = rateLimit({
@@ -28,12 +29,12 @@ app.use(cookieParser('elperroespacialescuchaañoñocantarflamenco'))
 require('./server/passportconfig.js')(app, passport, session, passportLocal)
 require('./server/mqttcon.js')(mqtt)
 
-app.get('*', function (req, res, next) {
+/*app.get('*', function (req, res, next) {
   if (req.headers['x-forwarded-proto'] != 'https')
     return res.redirect(['https://', req.get('Host'), req.url].join(''));
   else
     next()  //Continue to other routes if we're not redirecting 
-})
+})*/
 
 require('./server/app.js')(app, passport)
 

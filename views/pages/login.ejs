@@ -22,30 +22,30 @@
       <div class="row">
         <div class="col-sm-6 mx-auto">
 
-          <div class="card text-center">
-            <div class="card-header">
-              ¡Bienvenido a Composto Monitor!
-            </div>
-            <div class="card-body">
+          <div class="text-center container-fluid">
+              <h1 class="display-3 text-white">Composto Monitor.</h1>
+              <br>
+              <h4 class="text-white" >Iniciar sesión.</h4>
+              <br>
               <form action="/login" method="POST">
                 <div class="row mb-3">
-                  <label for="inputUser" class="col-sm-2 col-form-label">Usuario</label>
+                  <label for="inputUser" class="col-sm-2 col-form-label text-white">Usuario</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" name="username"
-                      placeholder="invitados usen username: guest " id="inputUser">
+                      placeholder="eg. guest" id="inputUser">
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                  <label for="inputPassword3" class="col-sm-2 col-form-label text-white">Contraseña</label>
                   <div class="col-sm-10">
                     <input type="password" class="form-control" name="password"
-                      placeholder="contraseña para invitados: composta " id="inputPassword3">
+                      placeholder="eg. composta" id="inputPassword3">
                   </div>
                 </div>
 
                 <button type="submit" class="btn btn-secondary">Sign in</button>
               </form>
-            </div>
+
 
           </div>
 
@@ -55,9 +55,14 @@
     </div>
   </div>
 
+  <script src="/js/bootstrap.bundle.js"></script>
+
+  <script src="/js/pwa.js"></script>
+  <script src="/js/status.js"></script>
+
   <footer class="footer">
 
-    <p class="text-center" style="color:rgb(255, 255, 255)">Recopilación de datos experimental para el CNF 2021</p>
+    <p class="text-center" style="color:rgb(61, 61, 61)">Recopilación de datos experimental para el CNF 2021</p>
 
   </footer>
 
