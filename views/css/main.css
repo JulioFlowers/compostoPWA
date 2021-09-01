@@ -1,0 +1,47 @@
+
+html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+  }
+
+.login-background {
+    background: linear-gradient(323deg,#39f6d0,#41bda1,#5fb3b1,#56d0de);
+    background-size: 240% 240%;
+    animation: gradient-animation 20s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.is-center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.cfooter{
+    height: 92%;
+    size: 5%;
+    font-size: .6rem;
+}
+
+.cfooter strong{
+    color: inherit;
+}
+
+.cfooter a{
+    color: inherit;
+}
+  

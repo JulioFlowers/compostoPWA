@@ -1,72 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
-  <%- include('../partials/head.ejs'); %>
+  <%- include('../../views/partials/head.ejs'); %>
     <title>Composto Login</title>
 </head>
 
-<body>
-  <style type="text/css">
-    body {
-      background-image: radial-gradient(circle at 50% 110.64%, #b4d2c5 0, #a3ccbf 12.5%, #90c4ba 25%, #7abcb5 37.5%, #5fb3b1 50%, #3eaaae 62.5%, #00a1ae 75%, #0099ae 87.5%, #0091b0 100%);
-    }
-  </style>
-  <div id="wrap">
-
-    <div id="main" class="container clear-top">
-      <br>
-      <br>
-      <br>
-
-      <div class="row">
-        <div class="col-sm-6 mx-auto">
-
-          <div class="text-center container-fluid">
-              <h1 class="display-3 text-white">Composto Monitor.</h1>
-              <br>
-              <h4 class="text-white" >Iniciar sesión.</h4>
-              <br>
-              <form action="/login" method="POST">
-                <div class="row mb-3">
-                  <label for="inputUser" class="col-sm-2 col-form-label text-white">Usuario</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" name="username"
-                      placeholder="eg. guest" id="inputUser">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label text-white">Contraseña</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" name="password"
-                      placeholder="eg. composta" id="inputPassword3">
-                  </div>
-                </div>
-
-                <button type="submit" class="btn btn-secondary">Sign in</button>
-              </form>
-
-
-          </div>
-
+<body class="login-background">
+  <div>
+    <section class="hero is-fullheight">
+      <div class="hero-body is-center">
+        <div>
+          <p class="title is-size-1 is-size-2-touch has-text-centered has-text-white">
+            Composto Monitor.
+          </p>
+          <p class="subtitle is-size-5 is-size-6-touch has-text-centered has-text-white">
+            Iniciar Sesión.
+          </p>
         </div>
-
       </div>
-    </div>
+
+      <script src="/js/pwa.js"></script>
+      <script src="/js/status.js"></script>
+
+      <footer class="cfooter">
+        <div class="has-text-centered">
+          <p class="has-text-white">
+            <strong>Composto Monitor</strong> por Composto Team,<br> recopilación de datos experimentales para el <a
+              href="https://cnf.smf.mx/programa/programa-final/ensenanza">CNF 2021 LXIV-003646</a>.
+          </p>
+        </div>
+      </footer>
+      
+    </section>
   </div>
-
-  <script src="/js/bootstrap.bundle.js"></script>
-
-  <script src="/js/pwa.js"></script>
-  <script src="/js/status.js"></script>
-
-  <footer class="footer">
-
-    <p class="text-center" style="color:rgb(61, 61, 61)">Recopilación de datos experimental para el CNF 2021</p>
-
-  </footer>
-
-
 </body>
 
 </html>
