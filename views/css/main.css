@@ -9,7 +9,7 @@ html {
 .login-background {
     background: linear-gradient(323deg,#39f6d0,#41bda1,#5fb3b1,#56d0de);
     background-size: 240% 240%;
-    animation: gradient-animation 20s ease infinite;
+    animation: gradient-animation 5s ease infinite;
   }
   
   @keyframes gradient-animation {
@@ -34,7 +34,7 @@ html {
 .cfooter{
     height: 92%;
     size: 5%;
-    font-size: .6rem;
+    font-size: 0.75rem;
 }
 
 .cfooter strong{

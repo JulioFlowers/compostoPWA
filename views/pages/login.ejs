@@ -17,7 +17,30 @@
           <p class="subtitle is-size-5 is-size-6-touch has-text-centered has-text-white">
             Iniciar Sesión.
           </p>
+
+          <form action="/login" method="post">
+
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" name="username" placeholder="Nombre de Usuario.">
+              </div>
+              <p class="help has-text-grey-lighter">Para entrar como invitado use: "guest".</p>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input" type="password" name="password" placeholder="Contraseña.">
+              </div>
+              <p class="help has-text-grey-lighter">Contraseña para invitados: "composta".</p>
+            </div>
+            <br>
+            <div class="control">
+              <button type="submit" class="button is-primary is-light">Iniciar Sesión.</button>
+            </div>
+
+          </form>
         </div>
+
       </div>
 
       <script src="/js/pwa.js"></script>
@@ -26,12 +49,13 @@
       <footer class="cfooter">
         <div class="has-text-centered">
           <p class="has-text-white">
-            <strong>Composto Monitor</strong> por Composto Team,<br> recopilación de datos experimentales para el <a
-              href="https://cnf.smf.mx/programa/programa-final/ensenanza">CNF 2021 LXIV-003646</a>.
+            <strong>Composto Monitor</strong> por Composto Team,<br> recopilación de datos experimentales para el
+            <a target="_blank" href="https://cnf.smf.mx/programa/programa-final/ensenanza">CNF 2021 LXIV-003646</a>.
           </p>
+          <br>
         </div>
       </footer>
-      
+
     </section>
   </div>
 </body>

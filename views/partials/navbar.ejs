@@ -1,23 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5fb3b1;">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <img src="/static/images/icons/Icon-120.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      Composto Monitor
+<script src="/js/navbar.js" type="text/javascript"></script>
+
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="background-color:#5fb3b1 ;">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/images/icons/Icon-20.png" width="20" height="20">&nbsp; <span> Composto Monitor.</span></a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+  </div>
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/live">Live.</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/sensors">por Sensor.</a>
-        </li>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/sensors">
+        Sensores.
+      </a>
 
-      </ul>
+      <a class="navbar-item" href="/live">
+        Live.
+      </a>
+    </div>
+
+    <div class="navbar-end">
     </div>
   </div>
 </nav>
