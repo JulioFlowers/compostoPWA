@@ -5,6 +5,8 @@ const toCache = [
   appRequest,
   '/',
   '/pages/index.ejs',
+  '/login',
+  '/pages/login.ejs',
 ];
 
 self.addEventListener('install', function(event) {
