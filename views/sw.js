@@ -1,4 +1,4 @@
-var appRequest = new Request('/da-private-route', { credentials: 'include' })
+var appRequest = new Request('/login', { credentials: 'include' })
 
 const CACHE_NAME = 'composto-cache';
 const toCache = [
