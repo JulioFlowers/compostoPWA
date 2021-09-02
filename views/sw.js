@@ -8,6 +8,8 @@ const toCache = [
   '/css/main.css',
   '/css/bulma.css',
   '/js/navbar.css',
+  '/login',
+  '/pages/login.ejs',
   '/',
   '/pages/index.ejs',
 ];
