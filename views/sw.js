@@ -2,10 +2,6 @@ const CACHE_NAME = 'composto-cache';
 const toCache = [
   '/',
   '/pages/index.ejs',
-  '/css/bulma.min.css',
-  '/css/main.css',
-  '/js/navbar.js',
-  '/images/icons/Icon-20.png'
 ];
 
 self.addEventListener('install', function(event) {
