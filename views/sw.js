@@ -1,5 +1,13 @@
+var appRequest = new Request('/da-private-route', { credentials: 'include' })
+
 const CACHE_NAME = 'composto-cache';
 const toCache = [
+  appRequest,
+  '/js/manifest.json',
+  '/images/icons/Icon-20.png',
+  '/css/main.css',
+  '/css/bulma.css',
+  '/js/navbar.css',
   '/',
   '/pages/index.ejs',
 ];
