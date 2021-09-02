@@ -3,7 +3,7 @@
     "short_name": "Composto Monitor.",
     "description": "esp32 compost variable register monitor on demand ",
     "orientation": "portrait-primary",
-    "start_url": "/login",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#5fb3b1",
     "background_color": "#FFFFFF",
