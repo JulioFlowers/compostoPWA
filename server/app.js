@@ -1,23 +1,35 @@
 'use strict'
 
-module.exports = (app, passport, webpush) => {
+//configuracion para notificaciones web push
+const webpush = require('./config/webpush.js')
+
+module.exports = (app, passport) => {
 
     let user
     let pushSubscripton
 
-    let suscrito = JSON.stringify(
-        {
-            title:"Composto Monitor.",
-            message:"Las notificaciones se activaron satisfactoriamente."
-        }
-    )
-
-   app.post("/subs", async (req, res) => {
+   app.post('/subs', async (req, res) => {
         pushSubscripton = req.body
         console.log(pushSubscripton)
-
         res.status(201).json();
-        await webpush.sendNotification(pushSubscripton, suscrito)
+
+        let suscrito = JSON.stringify(
+            {
+                title: 'Composto Monitor.',
+                message: 'Las notificaciones se activaron satisfactoriamente.'
+            }
+        )
+
+        try {
+
+            await webpush.sendNotification(pushSubscripton, suscrito)
+            console.log("notificacion enviada")
+        } catch (error) {
+
+            console.log(error)
+            
+        }
+        
       })
 
 
