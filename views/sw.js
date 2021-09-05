@@ -45,3 +45,13 @@ self.addEventListener('activate', function(event) {
       .then(() => self.clients.claim())
   )
 })
+
+self.addEventListener('push', e => {
+  const data = e.data.json();
+  console.log(data)
+  console.log('Notification Received');
+  self.registration.showNotification(data.title, {
+      body: data.message,
+      icon: '/images/icons/Icon-2048.png'
+  });
+});

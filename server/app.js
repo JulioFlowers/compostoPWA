@@ -1,8 +1,26 @@
 'use strict'
 
-module.exports = (app, passport) => {
+module.exports = (app, passport, webpush) => {
 
     let user
+    let pushSubscripton
+
+    let suscrito = JSON.stringify(
+        {
+            title:"Composto Monitor.",
+            message:"Las notificaciones se activaron satisfactoriamente."
+        }
+    )
+
+   app.post("/subs", async (req, res) => {
+        pushSubscripton = req.body
+        console.log(pushSubscripton)
+
+        res.status(201).json();
+        await webpush.sendNotification(pushSubscripton, suscrito)
+      })
+
+
 
     app.get('/login', (req, res) => {
 

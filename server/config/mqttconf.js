@@ -1,8 +1,6 @@
 'use strict'
+const mqtt = require('mqtt')
 
-module.exports = (mqtt) => {
-
-// connection option
 const options = {
   		clean: true, // retain session
       connectTimeout: 4000, // Timeout period
@@ -22,18 +20,18 @@ const options = {
 // wxs WeChat applet connection
 // alis Alipay applet connection
 const connectUrl = 'ws://34.102.107.56:8083/mqtt'
-const client = mqtt.connect(connectUrl, options)
+const cmclient = mqtt.connect(connectUrl, options)
 
-client.on('connect', (error) => {
+cmclient.on('connect', (error) => {
     console.log('Servidor conectado exitosamente.')
 })
 
-client.on('reconnect', (error) => {
+cmclient.on('reconnect', (error) => {
     console.log('reconnecting:', error)
 })
 
-client.on('error', (error) => {
+cmclient.on('error', (error) => {
     console.log('Connection failed:', error)
 })
 
-}
+module.exports = cmclient

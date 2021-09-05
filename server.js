@@ -1,42 +1,44 @@
 'use strict'
 
-const express = require('express')
+//variables de entorno
+require('dotenv').config()
 const path = require('path')
-const mqtt = require('mqtt')
 
+//comunicacion http
+const express = require('express')
+
+//auntentificacion
 const passport = require('passport')
-const cookieParser = require('cookie-parser')
-const session = require('express-session')
-const passportLocal = require('passport-local').Strategy
 
-var helmet = require('helmet');
-var rateLimit = require("express-rate-limit");
-
+//inicia la app web
 const app = express()
+
+//configuraciones del app web
+require('./server/config/expressconf.js')(express, app)
+
+//configuracion del protocolo mqtt para conectar con el esp32
+require('./server/config/mqttconf.js')
+
+//configuracion para notificaciones web push
+const webpush = require('./server/config/webpush.js')
+
+//manejo de datos estaticos y renderización de interfaz.
 app.use(express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');
 
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
-});
+// configuración de inicio de sesión.
+ require('./server/config/passportconf.js')(app, passport)
 
-app.use(helmet());
-app.use(limiter);
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser('elperroespacialescuchaañoñocantarflamenco'))
+//redireccion de peticiones http a https (no funciona en localhost, se necesita añadir certificados ssl)
 
-require('./server/passportconfig.js')(app, passport, session, passportLocal)
-require('./server/mqttcon.js')(mqtt)
-
-app.get('*', function (req, res, next) {
+/*app.get('*', function (req, res, next) {
   if (req.headers['x-forwarded-proto'] != 'https')
     return res.redirect(['https://', req.get('Host'), req.url].join(''));
   else
     next()  //Continue to other routes if we're not redirecting 
-})
+})*/
 
-require('./server/app.js')(app, passport)
+require('./server/app.js')(app, passport,webpush)
 
 app.listen(process.env.PORT || 3000, function () {
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
