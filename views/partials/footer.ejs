@@ -1,6 +1,10 @@
-<script src="/js/pwa.js"></script>
+
+
+<script src = "/js/pwa.js"></script>
 <script src="/js/status.js"></script>
-<script src="/js/subs.js"></script>
+<% if (user == process.env.RUSER) { %>
+  <script src="/js/subs.js"></script>
+<% } %>
 
 <footer class="cfooter">
     <div class=" has-text-centered">

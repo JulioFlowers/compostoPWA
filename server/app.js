@@ -2,6 +2,8 @@
 
 //configuracion para notificaciones web push
 const webpush = require('./config/webpush.js')
+const cron = require('node-cron')
+const cmclient= require('./config/mqttconf')
 
 module.exports = (app, passport) => {
 
@@ -60,6 +62,44 @@ module.exports = (app, passport) => {
         let data = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [[1, '4:05', '44', '2', '70', '1', '45', '2', '25', '3', '345', '12'], [], [], [], [], [], [], [], [], [], [], [], [], '04:10:34']]
         res.render('pages/index.ejs', { data, user });
     })
+
+    let sevsuc = JSON.stringify(
+        {
+            title: 'Composto Monitor.',
+            message: 'Obtencion de datos programada se ha iniciado con exito.'
+        }
+    )
+    
+    const sev = async() =>{
+    
+        cmclient.publish('/prueba', 'Prueba de evento programado mqtt')
+        await webpush.sendNotification(pushSubscripton, sevsuc)
+    
+    }
+    
+    const sever = async() =>{
+    
+        let severr = JSON.stringify(
+            {
+                title: 'Composto Monitor.',
+                message: `${globalThis.error}, Error al enviar petición al ESP32, verique su conexion al broker MQTT \n 
+                o verifique la programación del evento.`
+            } 
+        )
+    
+        await webpush.sendNotification(pushSubscripton, severr)
+    
+    }
+    
+    try {
+    
+        cron.schedule('* * * * *', () => {
+            sev()
+          });
+        
+    } catch (error) {   
+        sever()
+    }
 
 
 }
