@@ -1,4 +1,5 @@
 const cmclient = require('./config/mqttconf')
+const webpush = require('./config/webpush.js')
 const mh = require('./messagehandler.js')
 
 const sev = async () => {
