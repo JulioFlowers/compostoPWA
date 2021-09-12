@@ -1,7 +1,7 @@
 const cmclient = require('./config/mqttconf')
 const mh = require('./messagehandler.js')
 
-const sev = async () => {
+const sev = () => {
 
     try {
 
