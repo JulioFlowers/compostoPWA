@@ -2,36 +2,21 @@
 //configuracion para notificaciones web push
 const webpush = require('./config/webpush.js')
 const fs = require('fs');
-const { nextTick } = require('process');
 const message = JSON.parse(fs.readFileSync('./server/config/messages.json'))
+
+let pushSubscripton
 
 const subscriber = async (req, res) => {
 
-    let pushSubscripton = req.body
+    let data = JSON.parse(fs.readFileSync('./server/config/pushsubs.json'))
+
+     pushSubscripton = req.body;
+    console.log(pushSubscripton);
+    data.push(pushSubscripton);
+    fs.writeFile('./server/config/pushsubs.json',JSON.stringify(data,null,2), (err)=>{if(err) return console.log(err) })
+
+    // Server's Response
     res.status(201).json();
-
-    fs.readFile('./server/config/pushsubs.json', (err, data) => {
-        if (err) throw err;
-        let subs = JSON.parse(data);
-
-        const managesubs = async ()=>{
-
-            await subs.forEach(async (element) => {
-    
-                 if (await pushSubscripton.endpoint === element.endpoint) {
-                }
-                else{
-                    subs.push(pushSubscripton)
-                    let ppsubs = JSON.stringify(subs, null, 2)
-        
-                    fs.writeFile('./server/config/pushsubs.json', ppsubs, (err) => { if (err) throw err })
-                }
-            })
-        }
-
-        managesubs()
-  
-    })
 
     try {
         await webpush.sendNotification(pushSubscripton, JSON.stringify(message[0]))
@@ -46,17 +31,21 @@ const sender = async (n) => {
 
     const subs = JSON.parse(fs.readFileSync('./server/config/pushsubs.json'))
 
-    await subs.forEach(async (element) => {
+    for(const element of subs){
         let psub = element
+
+        const send = await webpush.sendNotification(psub, JSON.stringify(message[n]))
+
         try {
-            await webpush.sendNotification(psub, JSON.stringify(message[n]))
+            send
         } catch (error) {
-    
+
             console.log(error)
-    
+
         }
-    })
+    }
 
 }
 
-module.exports = { subscriber, sender }
+
+module.exports = { subscriber,sender }

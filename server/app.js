@@ -38,7 +38,7 @@ module.exports = (app, passport) => {
         res.render('pages/index.ejs', { data, user });
     })
 
-    const sev = async () => {
+     const sev = async () => {
 
         try {
 
@@ -51,11 +51,10 @@ module.exports = (app, passport) => {
 
     try {
 
-        cron.schedule('*/5 * * * *', () => {
+        cron.schedule('*/10 * * * *', () => {
             sev()
         });
 
     } catch (error) {mh.sender(2)}
-
 
 }

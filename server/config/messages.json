@@ -27,5 +27,15 @@
     {
         "title": "Composto Monitor.",
         "message": "Error de conexión, comunicación MQTT no encontrada."
+    },
+
+    {
+        "title": "Composto Monitor.",
+        "message": "Bienvenido! Notificaciones activadas satisfactoriamente."
+    },
+
+    {
+        "title": "Composto Monitor.",
+        "message": "Usarie Investigadore! Tu suscripción a las notificaciones fue actualizada."
     }
 ]

@@ -14,29 +14,44 @@ function urlBase64ToUint8Array(base64String) {
 
 const PUBLIC_VAPID_KEY = "BA4RjxcqJAT_rl_a3pKfo8gWG510LLSZJPs_7_6spkDw3XupGFs_xpSU-dj2X2ZOJDFk3OvJshRljB-k1og4J_U"
 
-const subscription = async () => {
-// Service Worker
 
-const sw = await navigator.serviceWorker.getRegistration()
+const subsc = async () => {
+  // Service Worker
+  console.log("asking for Service worker");
+  const sw = await navigator.serviceWorker.getRegistration()
 
-// Listen Push Notifications
-console.log("Listening Push Notifications");
-const subs = await sw.pushManager.subscribe({
-  userVisibleOnly: true,
-  applicationServerKey: urlBase64ToUint8Array(PUBLIC_VAPID_KEY)
-});
+  // Listen Push Notifications
+  console.log("Listening Push Notifications");
+  const subscription = await sw.pushManager.subscribe({
+    userVisibleOnly: true,
+    applicationServerKey: urlBase64ToUint8Array(PUBLIC_VAPID_KEY)
+  });
 
-console.log(subs);
-
-// Send Notification
-await fetch('/subs', {
-  method: "POST",
-  body: JSON.stringify(subs),
-  headers: {
-    "Content-Type": "application/json"
-  }
-});
-console.log("Subscribed!");
+  // Send Notification
+  await fetch("/subs", {
+    method: "POST",
+    body: JSON.stringify(subscription),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  console.log("Subscribed!");
 };
 
-subscription()
+const checker = async()=>{
+
+  const sw = await navigator.serviceWorker.getRegistration()
+
+  sw.pushManager.getSubscription().then(function(subscription) {
+
+    isSubscribed = !(subscription === null)
+
+    if (isSubscribed) {
+      console.log('User IS subscribed.')
+    } else {
+      subsc()
+    }
+  })
+}
+
+checker()
