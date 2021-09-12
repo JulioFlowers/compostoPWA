@@ -8,11 +8,15 @@ const sev = () => {
         cmclient.publish('/prueba', 'Prueba de evento programado mqtt')
         mh.sender(1)
 
-    } catch (error) { mh.sender(5)}
+    } catch (error) { 
+        console.log(error)
+        mh.sender(5)}
     
 }
 
 try {
         sev()
 
-} catch (error) {mh.sender(2)}
+} catch (error) {
+    console.log(error)
+    mh.sender(2)}
