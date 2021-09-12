@@ -1,5 +1,6 @@
 'use strict'
 //configuracion para notificaciones web push
+require('dotenv').config()
 const webpush = require('./config/webpush.js')
 const fs = require('fs');
 const message = JSON.parse(fs.readFileSync('./server/config/messages.json'))
