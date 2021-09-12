@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Composto Monitor.",
+        "message": "Bienvenido de nuevo usarie investigadore."
+    },
+
+    {
+        "title": "Composto Monitor.",
+        "message": "Obtención de datos programada se ha iniciado con éxito."
+    },
+
+    {
+        "title": "Composto Monitor.",
+        "message": "Error al inciar obtención de datos programada."
+    },
+
+    {
+        "title": "Composto Monitor.",
+        "message": "Error al menejar petición (Peticióm no recibida, ESP32 no conectado)."
+    },
+
+    {
+        "title": "Composto Monitor.",
+        "message": "Error al menejar petición (Petición no enviada, enviada inadecuadamente)."
+    },
+
+    {
+        "title": "Composto Monitor.",
+        "message": "Error de conexión, comunicación MQTT no encontrada."
+    }
+]
