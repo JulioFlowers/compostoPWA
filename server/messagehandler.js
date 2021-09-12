@@ -17,9 +17,8 @@ const subscriber = async (req, res) => {
         const managesubs = async ()=>{
 
             await subs.forEach(async (element) => {
-                let psub = element
     
-                 if (element.keys.auth === psub.keys.auth) {
+                 if (await pushSubscripton.endpoint === element.endpoint) {
                 }
                 else{
                     subs.push(pushSubscripton)
@@ -49,7 +48,13 @@ const sender = async (n) => {
 
     await subs.forEach(async (element) => {
         let psub = element
-        await webpush.sendNotification(psub, JSON.stringify(message[n]))
+        try {
+            await webpush.sendNotification(psub, JSON.stringify(message[n]))
+        } catch (error) {
+    
+            console.log(error)
+    
+        }
     })
 
 }

@@ -1,9 +1,25 @@
 [
   {
-    "endpoint": "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABhPFvyXNoRxJqQKPWgVaoFv6WNNc9h-X5rIq7IWRbPVTz7tdV37EJehLM-WXT2h-LR1FgyK23hvo5A1clgdGN6fHRXVdemYdOHxaHPmpyrHX3LsPys6VtFLE_Df1qpQECZVIfhSxh4o8ONLfLdJWR2j8Jd4ddHddnS5n2EOJxB57jdUg4",
+    "endpoint": "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABhPVH695mEWZtUIifuiNzE07tDenXzF8dCrcvtN8z9OzdJO-24oKNdDnaN1Yetb1KSrnQWcRiGx3SemzGOaCCuL6UzGKbP_cWzHBqXsK_GctUBK5rhaJth3-u0t_SWMBcpJdnxPfC0rcJNrJkIG4C_RncjCFsYY4DgoXOe8XibAuFJ7Tg",
     "keys": {
-      "auth": "keby8xw20J1y-_TIbnMzAA",
-      "p256dh": "BEq965f2JugoqHGBg431h_g0R0pVR3-cZPmGqUja8eddZsqnLRd-LhkC9rrG0I2HnrhdPqQ7tPWjBetNgyWBnlQ"
+      "auth": "jcqvWkRdSYAYX1mYnbV0lg",
+      "p256dh": "BFUR0saI0gHFFCZAGrIQ9KJZP7I1EgY-w6dFJZimVCnJxX_Thxi4sl1fzuAC4noTiRs7kb0miRHGlMrIPgsGB6s"
+    }
+  },
+  {
+    "endpoint": "https://wns2-bl2p.notify.windows.com/w/?token=BQYAAAC4XI9HGZdMN0GGFN%2bcHAQMQsxvCKSxli6jRmqF3pdC6LJuTUDLm5tOHGAKPEX7yHYrs8KODn7%2fgis6qa%2frJj1dZpTMva4aCzw5s%2bkY68TRnOLErh3x8m2PTGRzVKhS3by3NHYtRJSJVEBWH8t6tblcrOplKXJ4JYDyt1UUd2K%2bNFsTdFAJLmFVjQg6z%2fQYJKroOBPHWzVyl%2bn%2fmmgbxUCYGZ%2f98yFkmlIYlCbCADA7J8gBuQtwOsPhGNew0KG48rqWWjgljFuG73kbvYUg8erb4YaTuJEiljgxMlA5wBdvvtn%2bDWVriJ3wyeqq1TlBCMSYLf%2f47ZyV9858739XF1mA",
+    "expirationTime": null,
+    "keys": {
+      "p256dh": "BFpZx-rwSj6LQ0CI8xfqffpjEAqyKabxQrg2hbFic55QspW-eIYSTWoG9xVlrf3p9OS08Qcr7x_wPUKduzzxOEU",
+      "auth": "V3HRedDxWIj53JC-8PbjMA"
+    }
+  },
+  {
+    "endpoint": "https://wns2-bl2p.notify.windows.com/w/?token=BQYAAAC4XI9HGZdMN0GGFN%2bcHAQMQsxvCKSxli6jRmqF3pdC6LJuTUDLm5tOHGAKPEX7yHYrs8KODn7%2fgis6qa%2frJj1dZpTMva4aCzw5s%2bkY68TRnOLErh3x8m2PTGRzVKhS3by3NHYtRJSJVEBWH8t6tblcrOplKXJ4JYDyt1UUd2K%2bNFsTdFAJLmFVjQg6z%2fQYJKroOBPHWzVyl%2bn%2fmmgbxUCYGZ%2f98yFkmlIYlCbCADA7J8gBuQtwOsPhGNew0KG48rqWWjgljFuG73kbvYUg8erb4YaTuJEiljgxMlA5wBdvvtn%2bDWVriJ3wyeqq1TlBCMSYLf%2f47ZyV9858739XF1mA",
+    "expirationTime": null,
+    "keys": {
+      "p256dh": "BFpZx-rwSj6LQ0CI8xfqffpjEAqyKabxQrg2hbFic55QspW-eIYSTWoG9xVlrf3p9OS08Qcr7x_wPUKduzzxOEU",
+      "auth": "V3HRedDxWIj53JC-8PbjMA"
     }
   }
 ]

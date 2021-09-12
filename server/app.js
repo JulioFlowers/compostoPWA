@@ -51,7 +51,7 @@ module.exports = (app, passport) => {
 
     try {
 
-        cron.schedule('* * * * *', () => {
+        cron.schedule('*/5 * * * *', () => {
             sev()
         });
 
