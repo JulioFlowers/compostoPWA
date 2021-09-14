@@ -11,10 +11,10 @@ const subscriber = async (req, res) => {
 
     let data = JSON.parse(fs.readFileSync('./server/config/pushsubs.json'))
 
-     pushSubscripton = req.body;
+    pushSubscripton = req.body;
     console.log(pushSubscripton);
     data.push(pushSubscripton);
-    fs.writeFile('./server/config/pushsubs.json',JSON.stringify(data,null,2), (err)=>{if(err) return console.log(err) })
+    fs.writeFile('./server/config/pushsubs.json', JSON.stringify(data, null, 2), (err) => { if (err) return console.log(err) })
 
     // Server's Response
     res.status(201).json();
@@ -32,21 +32,20 @@ const sender = async (n) => {
 
     const subs = JSON.parse(fs.readFileSync('./server/config/pushsubs.json'))
 
-    for(const element of subs){
+    for (const element of subs) {
         let psub = element
 
-        const send = await webpush.sendNotification(psub, JSON.stringify(message[n]))
-
         try {
-            send
-        } catch (error) {
-
-            console.log(error)
-
+            await webpush.sendNotification(psub, JSON.stringify(message[n])) // genera una excepción
         }
-    }
+        catch (e) {
+            // sentencias para manejar cualquier excepción
+            console.log(e); // pasa el objeto de la excepción al manejador de errores
+        }
 
+
+    }
 }
 
 
-module.exports = { subscriber,sender }
+module.exports = { subscriber, sender }

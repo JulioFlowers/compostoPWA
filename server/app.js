@@ -1,4 +1,20 @@
 'use strict'
+const cmclient=require('./config/mqttconf.js')
+const mh = require('./messagehandler')
+
+const sev = async () => {
+
+    try {
+
+    cmclient.publish('/prueba', 'Prueba de evento programado mqtt')
+        mh.sender(1)
+
+    } catch (error) { 
+        console.log('Oh no ha ocurrido un error')
+        console.log(error)
+        mh.sender(5)}
+    
+}
 
 module.exports = (app, passport) => {
     let user
@@ -32,6 +48,8 @@ module.exports = (app, passport) => {
         res.render('pages/index.ejs', { data, user });
     })
 
-     
+    
 
 }
+
+module.exports.sev = sev

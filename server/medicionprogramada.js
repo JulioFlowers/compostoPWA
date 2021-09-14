@@ -1,7 +1,7 @@
 const cmclient = require('./config/mqttconf')
 const mh = require('./messagehandler.js')
 
-const sev = () => {
+const sev = async () => {
 
     try {
 
@@ -9,14 +9,9 @@ const sev = () => {
         mh.sender(1)
 
     } catch (error) { 
+        console.log('Oh no ha ocurrido un error')
         console.log(error)
         mh.sender(5)}
     
 }
 
-try {
-        sev()
-
-} catch (error) {
-    console.log(error)
-    mh.sender(2)}
